@@ -18,18 +18,18 @@
     <ClCompile Include="Minesweeper.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Borad.cpp">
+    <ClCompile Include="source\Introduction.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\Introduction.cpp">
+    <ClCompile Include="source\Borad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="header\Borad.h">
+    <ClInclude Include="header\Introduction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\Introduction.h">
+    <ClInclude Include="header\Borad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
