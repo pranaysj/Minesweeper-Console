@@ -7,9 +7,7 @@ Introduction::Introduction()
 	HowToPlay();
 }
 
-Introduction::~Introduction()
-{
-}
+Introduction::~Introduction(){}
 
 void Introduction::WelcomeTitle()
 {
@@ -35,5 +33,12 @@ void Introduction::HowToPlay()
 	cout << "\nHow to Play :"
 		"\n\t1.User will Input x and y (co-ordinates where they want to click)."
 		"\n\t2.In each step check for win or lose.\n\n\n";
+}
+
+void Introduction::GameStart()
+{
+	cout << "\n---------------------------------------\n";
+	cout << "|              GAME START             |\n";
+	cout << "---------------------------------------\n";
 }
 

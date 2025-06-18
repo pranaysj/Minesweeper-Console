@@ -130,10 +130,12 @@
     <ClCompile Include="Minesweeper.cpp" />
     <ClCompile Include="source\Borad.cpp" />
     <ClCompile Include="source\Introduction.cpp" />
+    <ClCompile Include="source\PlayerInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Borad.h" />
     <ClInclude Include="header\Introduction.h" />
+    <ClInclude Include="header\PlayerInput.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

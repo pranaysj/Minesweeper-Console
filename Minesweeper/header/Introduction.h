@@ -12,4 +12,6 @@ private:
 public:
 	Introduction();
 	~Introduction();
+
+	void GameStart();
 };

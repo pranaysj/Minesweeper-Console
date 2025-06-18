@@ -24,12 +24,18 @@
     <ClCompile Include="source\Borad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\PlayerInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Introduction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="header\Borad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\PlayerInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

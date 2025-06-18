@@ -8,9 +8,7 @@ Board::Board(int size)
 	Draw();
 }
 
-Board::~Board()
-{
-}
+Board::~Board(){}
 
 void Board::Draw()
 {
