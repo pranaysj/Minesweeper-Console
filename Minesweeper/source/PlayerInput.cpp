@@ -35,3 +35,11 @@ PlayerChoice PlayerInput::GetInput()
 {
 	return input;
 }
+
+void PlayerInput::SelectCell()
+{
+	cout << "Enter X co-ordinate : ";
+	cin >> x;
+	cout << "Enter Y co-ordinate : ";
+	cin >> y;
+}

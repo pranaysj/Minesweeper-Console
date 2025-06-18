@@ -11,6 +11,7 @@ enum class PlayerChoice
 class PlayerInput
 {
 private:
+	int x, y;
 	PlayerChoice input;
 
 public:
@@ -19,4 +20,6 @@ public:
 
 	void Start();
 	PlayerChoice GetInput();
+
+	void SelectCell();
 };
