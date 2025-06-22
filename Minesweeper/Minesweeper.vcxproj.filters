@@ -24,7 +24,13 @@
     <ClCompile Include="source\Borad.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="source\PlayerInput.cpp">
+    <ClCompile Include="source\PlayerInputManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Cell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\GameplayManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +41,13 @@
     <ClInclude Include="header\Borad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="header\PlayerInput.h">
+    <ClInclude Include="header\PlayerInputManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\Cell.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="header\GameplayManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

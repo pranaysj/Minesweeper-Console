@@ -2,14 +2,14 @@
 
 Introduction::Introduction()
 {
-	WelcomeTitle();
-	Rules();
-	HowToPlay();
+	WelcomeTitleTxt();
+	RulesTxt();
+	HowToPlayTxt();
 }
 
 Introduction::~Introduction(){}
 
-void Introduction::WelcomeTitle()
+void Introduction::WelcomeTitleTxt()
 {
 	cout << "\t---------------------------------------\n";
 	cout << "\t|                                     |\n";
@@ -18,7 +18,7 @@ void Introduction::WelcomeTitle()
 	cout << "\t---------------------------------------\n";
 }
 
-void Introduction::Rules()
+void Introduction::RulesTxt()
 {
 	cout << "\nRules :"
 		"\n\t1.The board is divided into cells, with mines randomly distributed."
@@ -28,17 +28,41 @@ void Introduction::Rules()
 		"\n\t5.Interact, evolve and enjoy!\n";
 }
 
-void Introduction::HowToPlay()
+void Introduction::HowToPlayTxt()
 {
 	cout << "\nHow to Play :"
 		"\n\t1.User will Input x and y (co-ordinates where they want to click)."
 		"\n\t2.In each step check for win or lose.\n\n\n";
 }
 
-void Introduction::GameStart()
+void Introduction::GameStartTxt()
 {
 	cout << "\n---------------------------------------\n";
 	cout << "|              GAME START             |\n";
+	cout << "---------------------------------------\n";
+}
+
+void Introduction::GameWonTxt()
+{
+	cout << "\n---------------------------------------\n";
+	cout << "|                YOU WIN              |\n";
+	cout << "---------------------------------------\n";
+}
+
+void Introduction::GameLoseTxt()
+{
+	cout << "\n---------------------------------------\n";
+	cout << "|    OOPS YOU STEPPED ON THE MINE     |\n";
+	cout << "|               YOU LOSE              |\n";
+	cout << "---------------------------------------\n";
+}
+
+void Introduction::GameEndTxt()
+{
+	cout << "\n---------------------------------------\n";
+	cout << "|              GAME ENDS              |\n";
+	cout << "|              THANK YOU              |\n";
+	cout << "|          SEE YOU NEXT TIME          |\n";
 	cout << "---------------------------------------\n";
 }
 

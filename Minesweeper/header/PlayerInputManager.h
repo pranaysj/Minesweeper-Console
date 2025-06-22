@@ -8,18 +8,21 @@ enum class PlayerChoice
 	NO
 };
 
-class PlayerInput
+class PlayerInputManager
 {
 private:
-	int x, y;
+	int xpos, ypos;
 	PlayerChoice input;
 
 public:
-	PlayerInput();
-	~PlayerInput();
+	PlayerInputManager();
+	~PlayerInputManager();
 
 	void Start();
 	PlayerChoice GetInput();
 
 	void SelectCell();
+
+	int getXPos();
+	int getYPos();
 };

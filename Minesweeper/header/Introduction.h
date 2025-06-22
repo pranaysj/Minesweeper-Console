@@ -5,13 +5,16 @@ using namespace std;
 class Introduction
 {
 private:
-	void WelcomeTitle();
-	void Rules();
-	void HowToPlay();
+	void WelcomeTitleTxt();
+	void RulesTxt();
+	void HowToPlayTxt();
 
 public:
 	Introduction();
 	~Introduction();
 
-	void GameStart();
+	void GameStartTxt();
+	void GameWonTxt();
+	void GameLoseTxt();
+	void GameEndTxt();
 };

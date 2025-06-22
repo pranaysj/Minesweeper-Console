@@ -129,13 +129,17 @@
   <ItemGroup>
     <ClCompile Include="Minesweeper.cpp" />
     <ClCompile Include="source\Borad.cpp" />
+    <ClCompile Include="source\Cell.cpp" />
+    <ClCompile Include="source\GameplayManager.cpp" />
     <ClCompile Include="source\Introduction.cpp" />
-    <ClCompile Include="source\PlayerInput.cpp" />
+    <ClCompile Include="source\PlayerInputManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header\Borad.h" />
+    <ClInclude Include="header\Cell.h" />
+    <ClInclude Include="header\GameplayManager.h" />
     <ClInclude Include="header\Introduction.h" />
-    <ClInclude Include="header\PlayerInput.h" />
+    <ClInclude Include="header\PlayerInputManager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

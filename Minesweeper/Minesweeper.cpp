@@ -1,27 +1,51 @@
 #include <iostream>
 #include "header/Introduction.h"
-#include "header/Borad.h"
-#include "header/PlayerInput.h"
+#include "header/PlayerInputManager.h"
+#include "header/GameplayManager.h"
 
 
 int main()
 {
 	Introduction intro;
-	PlayerInput playerInput;
+	GameplayManager gameplayManager;
 
-	playerInput.Start();
+	gameplayManager.StartGame();
+	
+	GameResult gameResult = gameplayManager.getGameResult();
 
-	PlayerChoice response = playerInput.GetInput();
-
-	if (response == PlayerChoice::YES)
+	if (gameResult == GameResult::NONE)
 	{
-		intro.GameStart();
+		intro.GameStartTxt();
 	}
-	else if(response == PlayerChoice::NO)
+	else if (gameResult == GameResult::LOST)
 	{
-		cout << "\nExiting the game.\n";
 		return 0;
 	}
 
-	Board board(5);
+	while (gameplayManager.hasGameEnded())
+	{
+		gameplayManager.handleGamePlay();
+
+		switch (gameplayManager.getGameResult())
+		{
+		case GameResult::NONE:
+			break;
+
+		case GameResult::WON:
+			//Print Win Text
+			intro.GameWonTxt();
+
+			gameplayManager.GetBoard();
+			intro.GameEndTxt();
+			return 0;
+
+		case GameResult::LOST:
+			//Print Lost Text
+			intro.GameLoseTxt();
+			gameplayManager.GetBoard();
+			intro.GameEndTxt();
+			return 0;
+		}
+	}
+
 }
