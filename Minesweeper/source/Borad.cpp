@@ -7,7 +7,23 @@ Board::Board(GameplayManager* gameManager)
 	initialize(gameManager);
 }
 
-Board::~Board(){}
+Board::~Board()
+{
+	deleteBoard();
+}
+
+void Board::deleteBoard()
+{
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			delete cell[i][j];
+		}
+		delete[] cell[i];
+	}
+	delete[] cell;
+}
 
 void Board::initialize(GameplayManager* gameManager)
 {
@@ -40,11 +56,9 @@ void Board::Draw()
 			}
 			else if (boardState == BoardState::PLAYING)
 			{
-				//Use CellState
 				cellState = cell[i][j]->getCellState();
 				int cellValue = static_cast<int>(cell[i][j]->getCellType());
 
-				//
 				switch (cellState)
 				{
 				case CellState::HIDDEN:
@@ -57,16 +71,11 @@ void Board::Draw()
 						cout << "|" << cellValue;
 					break;
 				}
-				//if (cellType == 9)  // Mine
-				//	cout << "|*";
-				//else
-				//	cout << "|" << cellType;
 			}
 		}
 		cout << "|\n";
 		VerticalLine();
 	}
-
 }
 
 void Board::populateMines(int xpos, int ypos)
@@ -83,9 +92,6 @@ void Board::populateMines(int xpos, int ypos)
 		//check the valid mine posiiotn
 		if (isvalidMinePosition(xpos, ypos, x, y))
 			continue;
-
-		//cout <<"xpos :" << xpos << "," << "ypos : " << ypos << "\n";
-		//cout <<"x :" << x << "," << "y : " << y << "\n";
 
 		cell[x][y]->setCellType(CellType::MINE);
 		++mines_placed;
@@ -122,16 +128,12 @@ int Board::countMinesAround(int x, int y)
 			int c = x + a;
 			int d = y + b;
 
-			//cout << "c : " << c << "," << "d : " << d << " - " << static_cast<int>(cell[c][d]->getCellType()) << "\n";
-
 			if (cell[c][d]->getCellType() == CellType::MINE)
 			{
 				minesAround++;
 			}
 		}
-
 	}
-
 	return minesAround;
 }
 
@@ -142,14 +144,11 @@ bool Board::isvalidCellPosition(int x, int y)
 
 void Board::openCell(int x, int y)
 {
-	//cell[x][y]->setCellState(CellState::OPEN);
-
 	if (!cell[x][y]->canOpenCell()) {
 		return;
 	}
 
 	processCellType(x, y);
-
 }
 
 void Board::openAllCell()
@@ -170,19 +169,17 @@ void Board::processCellType(int x, int y)
 	switch (cellType)
 	{
 	case CellType::ZERO:
-		//Open adjacent cells
 		proceeZeroType(x, y);
 		break;
+
 	case CellType::MINE:
-		//Lost the game
 		proceeMinesType(x, y);
 		break;
+
 	default:
-		//Open single cell
 		cell[x][y]->open();
 		break;
 	}
-
 }
 
 void Board::proceeZeroType(int x, int y)
@@ -205,37 +202,29 @@ void Board::proceeZeroType(int x, int y)
 		{
 			// Skip current cell and invalid positions
 			if ((a == 0 && b == 0) || !isvalidCellPosition(x+a, y+b))
-			{
 				continue;
-			}
 
 			//Open neighbor cell
-			openCell(x+a, y+b);  // Open neighbor
+			openCell(x+a, y+b);
 		}
 	}
 }
 
 void Board::proceeMinesType(int x, int y)
 {
-	//OPEN ALL THE CELLS WHEN LOST
-	//openAllCell();
-
-	//Draw();
-
-	//set the lost condiiton
 	gameManager->setGameResult(GameResult::LOST);
 }
 
 
 bool Board::isvalidMinePosition(int xpos, int ypos, int x, int y)
 {
-
 	return (x == xpos && y == ypos) || cell[x][y]->getCellType() == CellType::MINE;
 }
 
+
 bool Board::areAllCellsOpen()
 {
-	int totalSize = size * 2;
+	int totalSize = size * size;
 	int openCells = 0;
 
 	for (int i = 0; i < size; i++)
@@ -264,7 +253,6 @@ BoardState Board::getBoardState()
 
 void Board::VerticalLine()
 {
-	//Vertical line based on number of grid size
 	for (int i = 0; i < size; i++)
 	{
 		cout << "--";

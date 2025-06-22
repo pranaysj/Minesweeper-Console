@@ -36,7 +36,6 @@ public:
     bool canOpenCell();
     void open();
    
-
     void setCellState(CellState state);
     CellState getCellState();
 

@@ -17,8 +17,10 @@ private:
 	Board* board;
 	PlayerInputManager* playerInputManager;
 
-	int inputX, inputY;
+	int inputX = 0;
+	int inputY = 0;
 	GameResult gameresult;
+	void initialize();
 
 public:
 	GameplayManager();

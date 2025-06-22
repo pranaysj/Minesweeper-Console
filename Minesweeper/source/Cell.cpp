@@ -7,10 +7,7 @@ Cell::Cell()
 	initialize();
 }
 
-Cell::~Cell()
-{
-
-}
+Cell::~Cell() {}
 
 void Cell::initialize()
 {

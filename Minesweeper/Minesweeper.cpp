@@ -19,6 +19,7 @@ int main()
 	}
 	else if (gameResult == GameResult::LOST)
 	{
+		intro.GameEndTxt();
 		return 0;
 	}
 
@@ -32,15 +33,12 @@ int main()
 			break;
 
 		case GameResult::WON:
-			//Print Win Text
 			intro.GameWonTxt();
-
 			gameplayManager.GetBoard();
 			intro.GameEndTxt();
 			return 0;
 
 		case GameResult::LOST:
-			//Print Lost Text
 			intro.GameLoseTxt();
 			gameplayManager.GetBoard();
 			intro.GameEndTxt();

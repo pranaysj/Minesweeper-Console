@@ -1,17 +1,22 @@
 #include "../header/GameplayManager.h"
 
+
 GameplayManager::GameplayManager()
 {
-	playerInputManager = new PlayerInputManager();
-	board = new Board(this);
-	gameresult = GameResult::NONE;
-	inputX = 0;
-	inputY = 0;
-
+	initialize();
 }
 
 GameplayManager::~GameplayManager()
 {
+	delete playerInputManager;
+	delete board;
+}
+
+void GameplayManager::initialize()
+{
+	playerInputManager = new PlayerInputManager();
+	board = new Board(this);
+	gameresult = GameResult::NONE;
 }
 
 void GameplayManager::StartGame()
@@ -56,13 +61,13 @@ void GameplayManager::handleGamePlay()
 		board->setBoardState(BoardState::PLAYING);
 	}	
 	
-	// Open the first cell
+	// Open Cell based on the input and their condition
 	if (board->isState(BoardState::PLAYING))
 	{
 		board->openCell(inputX, inputY);
 	}
 
-	//WIN condiiton
+	//WIN condiiton check
 	if (board->areAllCellsOpen())
 	{
 		setGameResult(GameResult::WON);

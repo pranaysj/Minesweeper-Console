@@ -15,8 +15,8 @@ enum class BoardState
 class Board
 {
 private:
-	static const int size = 5;
-	int minesCount = 5;
+	static const int size = 9;
+	int minesCount = 10;
 	void VerticalLine();
 
 	void initialize(GameplayManager* gameManager);
@@ -30,6 +30,8 @@ private:
 	CellState cellState;
 
 	bool isvalidMinePosition(int xpos, int ypos, int x, int y);
+
+	void deleteBoard();
 
 public:
 	Board(GameplayManager *gameManager);
